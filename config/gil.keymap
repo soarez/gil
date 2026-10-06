@@ -13,14 +13,45 @@
 #define MACRO_LCGRIND_BINDINGS &none
 #endif
 
-// Tap-hold timings match the Sweep's QMK keymap: 150 ms, 200 ms for the Alt
-// keys (S, L), 400 ms for the Hyper/CAG keys (T, Y, G, H), and a 150 ms
-// quick-tap window everywhere
+// The layers and tap-hold timings are generated from layout/layout.yaml by
+// layout/generate.py, which writes the Sweep's QMK keymap from the same file.
+
+// BEGIN GENERATED timing from gil/layout/layout.yaml by layout/generate.py; edit that, not this
 &lt {
     tapping-term-ms = <150>;
     quick-tap-ms = <150>;
     flavor = "tap-preferred";
 };
+
+/ {
+    behaviors {
+        hy: hyperkey_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <400>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hm: homerow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+        hma: homerow_mods_alt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+        };
+    };
+};
+// END GENERATED timing
 &mt {
     tapping-term-ms = <150>;
     quick-tap-ms = <150>;
@@ -50,30 +81,6 @@
 / {
 
     behaviors {
-        hy: hyperkey_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <400>;
-            quick-tap-ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-        hma: homerow_mods_alt {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
         // Right outer thumb: hold for layer 4, or tap then press-and-hold to hold F20
         // (push-to-talk in Wispr Flow and superwhisper). A double tap sends one F20
         // tap (superwhisper toggle), a triple tap sends two (Wispr Flow toggle).
@@ -102,121 +109,129 @@
         };
     };
 
+    // BEGIN GENERATED layers from gil/layout/layout.yaml by layout/generate.py; edit that, not this
     keymap {
         compatible = "zmk,keymap";
         default_layer {
             label = "IGOR";
             bindings = <
-&kp Q       &kp W      &kp E      &kp R       &hy LC(LA(LGUI)) T       &hy RC(RA(RGUI)) Y     &kp U        &kp I       &kp O      &kp P
-&hm LCTRL A &hma LALT S &hm LGUI D &hm LSHFT F &hy LS(LC(LA(LGUI))) G   &hy LS(LC(LA(LGUI))) H &hm RSHFT J  &hm RGUI K  &hma RALT L &hm RCTRL SEMICOLON
-&kp Z       &kp X      &kp C      &kp V       &kp B                    &kp N                  &kp M        &kp COMMA   &kp DOT    &kp SLASH
-                                  &lt 3 ESC   &lt 1 SPACE              &lt 2 SPACE            &l4f20
+&kp Q        &kp W        &kp E       &kp R        &hy LC(LA(LGUI)) T      &hy RC(RA(RGUI)) Y      &kp U        &kp I       &kp O        &kp P
+&hm LCTRL A  &hma LALT S  &hm LGUI D  &hm LSHFT F  &hy LS(LC(LA(LGUI))) G  &hy LS(LC(LA(LGUI))) H  &hm RSHFT J  &hm RGUI K  &hma RALT L  &hm RCTRL SEMICOLON
+&kp Z        &kp X        &kp C       &kp V        &kp B                   &kp N                   &kp M        &kp COMMA   &kp DOT      &kp SLASH
+                                      &lt 3 ESC    &lt 1 SPACE             &lt 2 SPACE             &l4f20
             >;
         };
+        // Symbols and arrows
         layer_1 {
             label = "L1";
             bindings = <
-&kp TILDE  &kp EXCL   &kp AT     &kp HASH  &kp DLLR    &trans    &trans   &trans  &trans     &kp DEL
-&kp TAB    &kp PRCNT  &kp CARET  &kp AMPS  &kp ASTRK   &kp LEFT  &kp DOWN &kp UP  &kp RIGHT  &trans
-&none      &none      &none      &kp BSPC  &kp ENTER   &trans    &trans   &trans  &trans     &trans
-                                 &mo 7     &none       &trans    &trans
+&kp TILDE  &kp EXCL   &kp AT     &kp HASH  &kp DLLR   &trans    &trans    &trans  &trans     &kp DEL
+&kp TAB    &kp PRCNT  &kp CARET  &kp AMPS  &kp ASTRK  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans
+&none      &none      &none      &kp BSPC  &kp ENTER  &trans    &trans    &trans  &trans     &trans
+                                 &mo 7     &none      &trans    &trans
             >;
         };
+        // Brackets
         layer_2 {
             label = "L2";
             bindings = <
-&trans &trans &trans &trans &trans    &kp DQT   &kp LPAR  &kp RPAR  &none  &kp BSPC
-&trans &trans &trans &trans &trans    &kp SQT   &kp LBRC  &kp RBRC  &none  &kp BSLH
-&trans &trans &trans &trans &trans    &kp UNDER &kp LBKT  &kp RBKT  &none  &kp ENTER
-                     &none  &none     &none     &mo 8
+&trans  &trans  &trans  &trans  &trans  &kp DQT    &kp LPAR  &kp RPAR  &none  &kp BSPC
+&trans  &trans  &trans  &trans  &trans  &kp SQT    &kp LBRC  &kp RBRC  &none  &kp BSLH
+&trans  &trans  &trans  &trans  &trans  &kp UNDER  &kp LBKT  &kp RBKT  &none  &kp ENTER
+                        &none   &none   &none      &mo 8
             >;
         };
+        // Navigation and editing
         layer_3 {
             label = "L3";
             bindings = <
-&kp GRAVE  &trans    &kp UP     &trans      &kp F20      &trans  &trans  &trans  &trans  &trans
-&caps_word &kp LEFT  &kp DOWN   &kp RIGHT   &kp BSPC     &trans  &trans  &trans  &trans  &trans
-&kp LG(Z)  &kp LG(X) &kp LG(C)  &kp LG(V)   &kp ENTER    &trans  &trans  &trans  &trans  &trans
-                                &none       &mo 5        &trans  &trans
+&kp GRAVE   &trans     &kp UP     &trans     &kp F20    &trans  &trans  &trans  &trans  &trans
+&caps_word  &kp LEFT   &kp DOWN   &kp RIGHT  &kp BSPC   &trans  &trans  &trans  &trans  &trans
+&kp LG(Z)   &kp LG(X)  &kp LG(C)  &kp LG(V)  &kp ENTER  &trans  &trans  &trans  &trans  &trans
+                                  &none      &mo 5      &trans  &trans
             >;
         };
+        // Numbers
         layer_4 {
             label = "L4";
             bindings = <
-&trans &trans &trans &trans &trans    &kp PLUS   &kp N1  &kp N2  &kp N3  &kp DEL
-&trans &trans &trans &trans &trans    &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp PIPE
-&trans &trans &trans &trans &trans    &kp MINUS  &kp N7  &kp N8  &kp N9  &kp N0
-                     &trans &trans    &mo 6      &none
+&trans  &trans  &trans  &trans  &trans  &kp PLUS   &kp N1  &kp N2  &kp N3  &kp DEL
+&trans  &trans  &trans  &trans  &trans  &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp PIPE
+&trans  &trans  &trans  &trans  &trans  &kp MINUS  &kp N7  &kp N8  &kp N9  &kp N0
+                        &trans  &trans  &mo 6      &none
             >;
         };
+        // Keypad and F-keys
         layer_5 {
             label = "L5";
             bindings = <
-&kp KP_PLUS   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_ASTERISK   &kp F1   &kp F2   &kp F3   &kp F4      &kp F5
-&kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_SLASH      &kp F6   &kp F7   &kp F8   &kp F9      &kp F10
-&kp KP_DOT    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0         &kp F11  &kp F12  &none    &none       &none
-                                    &none      &none             &none    &none
+&kp KP_PLUS   &kp KP_N1  &kp KP_N2  &kp KP_N3  &kp KP_ASTERISK  &kp F1   &kp F2   &kp F3  &kp F4  &kp F5
+&kp KP_MINUS  &kp KP_N4  &kp KP_N5  &kp KP_N6  &kp KP_SLASH     &kp F6   &kp F7   &kp F8  &kp F9  &kp F10
+&kp KP_DOT    &kp KP_N7  &kp KP_N8  &kp KP_N9  &kp KP_N0        &kp F11  &kp F12  &none   &none   &none
+                                    &none      &none            &none    &none
             >;
         };
+        // Text macros
         layer_6 {
             label = "L6";
             bindings = <
-&none &none &none &none &none  &none &none &none &none &none
-&lcgrind &none &none &none &none  &none &none &none &none &none
-&none &none &none &none &none  &none &none &none &none &none
-                  &none &none  &none &none
+&none     &none  &none  &none  &none  &none  &none  &none  &none  &none
+&lcgrind  &none  &none  &none  &none  &none  &none  &none  &none  &none
+&none     &none  &none  &none  &none  &none  &none  &none  &none  &none
+                        &none  &none  &none  &none
             >;
         };
-        // Media and mouse, the same on both boards
+        // Media and mouse, the same on both boards. macOS reads Pause and ScrLk as display brightness up and down.
         layer_7 {
             label = "L7";
             bindings = <
-&kp C_FF &none             &kp K_MUTE   &none      &kp SYS_SLEEP  &none          &msc SCRL_DOWN &mmv MOVE_UP   &msc SCRL_UP    &mkp LCLK
-&kp C_RW &kp PAUSE_BREAK   &kp K_VOL_UP &none      &none          &none          &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &mkp RCLK
-&kp C_PP &kp SLCK          &kp K_VOL_DN &sys_reset &bootloader    &bootloader    &mo 9          &mo 10         &mo 11          &none
-                                      &none      &none          &none          &none
+&kp C_FF  &none            &kp K_MUTE    &none       &kp SYS_SLEEP  &none        &msc SCRL_DOWN  &mmv MOVE_UP    &msc SCRL_UP     &mkp LCLK
+&kp C_RW  &kp PAUSE_BREAK  &kp K_VOL_UP  &none       &none          &none        &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp RCLK
+&kp C_PP  &kp SLCK         &kp K_VOL_DN  &sys_reset  &bootloader    &bootloader  &mo 9           &mo 10          &mo 11           &none
+                                         &none       &none          &none        &none
             >;
         };
-        // System: this board's own hardware controls (the Sweep has RGB here)
+        // System, each board's own hardware controls
         layer_8 {
             label = "L8";
             bindings = <
-&none &none &none &none      &none              &bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3   &bt BT_SEL 4
-&none &none &none &none      &ext_power EP_TOG  &bt BT_DISC 0  &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3  &bt BT_DISC 4
-&none &none &none &sys_reset &bootloader        &bootloader    &sys_reset    &soft_off     &out OUT_TOG   &bt BT_CLR
-                  &none      &none              &none          &none
+&none  &none  &none  &none       &none              &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4
+&none  &none  &none  &none       &ext_power EP_TOG  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4
+&none  &none  &none  &sys_reset  &bootloader        &bootloader    &sys_reset     &soft_off      &out OUT_TOG   &bt BT_CLR
+                     &none       &none              &none          &none
             >;
         };
-        // Held by the mouse slow key on layer 7, see &mmv_input_listener
+        // Held by the mouse slow key, see &mmv_input_listener
         layer_9 {
             label = "MS";
             bindings = <
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-                     &trans &trans  &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans
             >;
         };
-        // Held by the mouse mid key on layer 7, see &mmv_input_listener
+        // Held by the mouse mid key, see &mmv_input_listener
         layer_10 {
             label = "MM";
             bindings = <
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-                     &trans &trans  &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans
             >;
         };
-        // Held by the mouse fast key on layer 7, see &mmv_input_listener
+        // Held by the mouse fast key, see &mmv_input_listener
         layer_11 {
             label = "MF";
             bindings = <
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-&trans &trans &trans &trans &trans  &trans &trans &trans &trans &trans
-                     &trans &trans  &trans &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans  &trans
             >;
         };
     };
+    // END GENERATED layers
 };
 

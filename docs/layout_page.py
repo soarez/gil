@@ -194,7 +194,7 @@ def qmk_timing(src, layers):
     per_key, pending = {}, []
     body = re.search(r'get_tapping_term\(.*?\{(.*?)\n\}', src, flags=re.S).group(1)
     for line in body.splitlines():
-        if m := re.match(r'\s*case\s+(\w+):', line):
+        if m := re.match(r'\s*case\s+(.+?):\s*$', line):
             pending.append(m.group(1))
         elif m := re.match(r'\s*return\s+(.*);', line):
             value = eval(m.group(1).replace('TAPPING_TERM', str(term)))

@@ -1,0 +1,175 @@
+# The keymap of both keyboards: gil (ZMK, config/gil.keymap) and the Aurora
+# Sweep (QMK, keyboards/splitkb/aurora/sweep/keymaps/sz/keymap.c in
+# soarez/qmk_firmware). layout/generate.py writes the layer tables and the
+# tap-hold timing into both; everything else in those files is hand-written.
+#
+# Each layer is 34 keys: three rows of 5 + 5, then the 4 thumbs. Tokens:
+#
+#   Q 1 F5 ; [ Esc Tab Space Bspc Enter Del Up ...   a key (see generate.py)
+#   KP1 KP+ KP. ...                                   keypad keys
+#   Cmd+Z                                             a key with Cmd held
+#   ctrl:A  alt:S  cmd:D  shift:F  cag:T  hyper:G     tap the key, hold the
+#                                                     modifier (left or right
+#                                                     one from the key's half)
+#   nav:Esc                                           tap Esc, hold layer nav
+#   @media                                            hold layer media
+#   ___                                               fall through
+#   xxx                                               nothing
+#   F20Thumb lcgrind ...                              defined under `custom`
+
+timing:
+  # Hold time before a dual-role key counts as held, by what it holds. Both
+  # boards decide on time alone: QMK with IGNORE_MOD_TAP_INTERRUPT, ZMK with
+  # tap-preferred.
+  ctrl: 150
+  cmd: 150
+  shift: 150
+  alt: 200
+  cag: 400
+  hyper: 400
+  layer: 150
+  # Tap then hold within this repeats the tap instead of holding
+  quick_tap: 150
+
+# Keys that only exist on one board, or need per-board code. A missing board
+# means the key is not available there. {layer} is replaced by that layer's
+# number.
+custom:
+  # Dictation thumb: hold for num, tap then hold for F20, double tap for one
+  # F20, triple tap for two. Custom code in each firmware.
+  F20Thumb: {sweep: L4_F20, gil: "&l4f20"}
+  # Text macros, typed from text set at build time (macro_text.py)
+  lcgrind: {sweep: LCGRIND, gil: "&lcgrind"}
+  # Mouse speed while held. gil holds an empty layer that scales movement.
+  MsSlow: {sweep: KC_ACL0, gil: "&mo {mslow}"}
+  MsMid: {sweep: KC_ACL1, gil: "&mo {mmid}"}
+  MsFast: {sweep: KC_ACL2, gil: "&mo {mfast}"}
+  # Sweep RGB lighting
+  RgbTog: {sweep: RGB_TOG}
+  RgbNext: {sweep: RGB_MOD}
+  RgbPrev: {sweep: RGB_RMOD}
+  Hue+: {sweep: RGB_HUI}
+  Hue-: {sweep: RGB_HUD}
+  Sat+: {sweep: RGB_SAI}
+  Sat-: {sweep: RGB_SAD}
+  Val+: {sweep: RGB_VAI}
+  Val-: {sweep: RGB_VAD}
+  Anim+: {sweep: RGB_SPI}
+  Anim-: {sweep: RGB_SPD}
+  # gil Bluetooth, output and power
+  BT0: {gil: "&bt BT_SEL 0"}
+  BT1: {gil: "&bt BT_SEL 1"}
+  BT2: {gil: "&bt BT_SEL 2"}
+  BT3: {gil: "&bt BT_SEL 3"}
+  BT4: {gil: "&bt BT_SEL 4"}
+  BTDrop0: {gil: "&bt BT_DISC 0"}
+  BTDrop1: {gil: "&bt BT_DISC 1"}
+  BTDrop2: {gil: "&bt BT_DISC 2"}
+  BTDrop3: {gil: "&bt BT_DISC 3"}
+  BTDrop4: {gil: "&bt BT_DISC 4"}
+  BTClear: {gil: "&bt BT_CLR"}
+  UsbBt: {gil: "&out OUT_TOG"}
+  ExtPower: {gil: "&ext_power EP_TOG"}
+  SoftOff: {gil: "&soft_off"}
+
+layers:
+  - id: base
+    zmk_label: IGOR
+    keys: |
+      Q        W        E        R        cag:T      cag:Y      U        I        O        P
+      ctrl:A   alt:S    cmd:D    shift:F  hyper:G    hyper:H    shift:J  cmd:K    alt:L    ctrl:;
+      Z        X        C        V        B          N          M        ,        .        /
+                                 nav:Esc  sym:Space  brk:Space  F20Thumb
+
+  - id: sym
+    description: Symbols and arrows
+    keys: |
+      ~     !     @     #      $        ___   ___   ___   ___    Del
+      Tab   %     ^     &      *        Left  Down  Up    Right  ___
+      xxx   xxx   xxx   Bspc   Enter    ___   ___   ___   ___    ___
+                        @media xxx      ___   ___
+
+  - id: brk
+    description: Brackets
+    keys: |
+      ___   ___   ___   ___   ___     "     (     )     xxx   Bspc
+      ___   ___   ___   ___   ___     '     {     }     xxx   \
+      ___   ___   ___   ___   ___     _     [     ]     xxx   Enter
+                        xxx   xxx     xxx   @sys
+
+  - id: nav
+    description: Navigation and editing
+    keys: |
+      `         ___     Up      ___     F20     ___   ___   ___   ___   ___
+      CapsWord  Left    Down    Right   Bspc    ___   ___   ___   ___   ___
+      Cmd+Z     Cmd+X   Cmd+C   Cmd+V   Enter   ___   ___   ___   ___   ___
+                                xxx     @kp     ___   ___
+
+  - id: num
+    description: Numbers
+    keys: |
+      ___   ___   ___   ___   ___     +     1     2     3     Del
+      ___   ___   ___   ___   ___     =     4     5     6     |
+      ___   ___   ___   ___   ___     -     7     8     9     0
+                        ___   ___     @mac  xxx
+
+  - id: kp
+    description: Keypad and F-keys
+    keys: |
+      KP+   KP1   KP2   KP3   KP*     F1    F2    F3    F4    F5
+      KP-   KP4   KP5   KP6   KP/     F6    F7    F8    F9    F10
+      KP.   KP7   KP8   KP9   KP0     F11   F12   xxx   xxx   xxx
+                        xxx   xxx     xxx   xxx
+
+  - id: mac
+    description: Text macros
+    keys: |
+      xxx      xxx   xxx   xxx   xxx     xxx   xxx   xxx   xxx   xxx
+      lcgrind  xxx   xxx   xxx   xxx     xxx   xxx   xxx   xxx   xxx
+      xxx      xxx   xxx   xxx   xxx     xxx   xxx   xxx   xxx   xxx
+                           xxx   xxx     xxx   xxx
+
+  - id: media
+    description: Media and mouse, the same on both boards. macOS reads Pause and
+      ScrLk as display brightness up and down.
+    keys: |
+      FFwd   xxx     Mute   xxx     Sleep    xxx    WhDown   MsUp     WhUp     Btn1
+      Rew    Pause   Vol+   xxx     xxx      xxx    MsLeft   MsDown   MsRight  Btn2
+      Play   ScrLk   Vol-   Reset   Boot     Boot   MsSlow   MsMid    MsFast   xxx
+                            xxx     xxx      xxx    xxx
+
+  - id: sys
+    description: System, each board's own hardware controls
+    keys:
+      sweep: |
+        RgbTog   Hue+   Sat+   Val+   Anim+    xxx    xxx     xxx   xxx   xxx
+        RgbNext  xxx    xxx    xxx    xxx      xxx    xxx     xxx   xxx   xxx
+        RgbPrev  Hue-   Sat-   Val-   Anim-    Boot   Reset   xxx   xxx   xxx
+                               xxx    xxx      xxx    xxx
+      gil: |
+        xxx   xxx   xxx   xxx     xxx        BT0       BT1       BT2       BT3       BT4
+        xxx   xxx   xxx   xxx     ExtPower   BTDrop0   BTDrop1   BTDrop2   BTDrop3   BTDrop4
+        xxx   xxx   xxx   Reset   Boot       Boot      Reset     SoftOff   UsbBt     BTClear
+                          xxx     xxx        xxx       xxx
+
+  # Empty layers held by gil's mouse speed keys; config/gil.keymap scales
+  # mouse movement while each is active
+  - id: mslow
+    zmk_label: MS
+    description: Held by the mouse slow key, see &mmv_input_listener
+    boards: [gil]
+    keys: &mouse_speed |
+      ___   ___   ___   ___   ___     ___   ___   ___   ___   ___
+      ___   ___   ___   ___   ___     ___   ___   ___   ___   ___
+      ___   ___   ___   ___   ___     ___   ___   ___   ___   ___
+                        ___   ___     ___   ___
+  - id: mmid
+    zmk_label: MM
+    description: Held by the mouse mid key, see &mmv_input_listener
+    boards: [gil]
+    keys: *mouse_speed
+  - id: mfast
+    zmk_label: MF
+    description: Held by the mouse fast key, see &mmv_input_listener
+    boards: [gil]
+    keys: *mouse_speed
