@@ -60,10 +60,10 @@ parse_config:
       tap: $$mdi:microphone$$
       shifted: F20
 
-    # Text macros, typed from text set at build time
+    # Text macros are left out of the drawing
     "&lcgrind":
-      tap: $$mdi:text-box-outline$$
-      shifted: lcgrind
+      tap: ""
+      type: none
 
     # Mouse
     "&mmv MOVE_UP": {tap: $$mdi:arrow-up-thin$$, shifted: mouse}

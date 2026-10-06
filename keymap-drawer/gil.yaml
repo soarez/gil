@@ -221,7 +221,7 @@ layers:
   - {type: none}
   - {type: none}
   - {type: none}
-  - {t: '$$mdi:text-box-outline$$', s: lcgrind}
+  - {type: none}
   - {type: none}
   - {type: none}
   - {type: none}

@@ -120,9 +120,6 @@
 <svg id="mdi:swap-horizontal">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-swap-horizontal" viewBox="0 0 24 24"><path d="M21,9L17,5V8H10V10H17V13M7,11L3,15L7,19V16H14V14H7V11Z" /></svg>
 </svg>
-<svg id="mdi:text-box-outline">
-<svg xmlns="http://www.w3.org/2000/svg" id="mdi-text-box-outline" viewBox="0 0 24 24"><path d="M5,3C3.89,3 3,3.89 3,5V19C3,20.11 3.89,21 5,21H19C20.11,21 21,20.11 21,19V5C21,3.89 20.11,3 19,3H5M5,5H19V19H5V5M7,7V9H17V7H7M7,11V13H17V11H7M7,15V17H14V15H7Z" /></svg>
-</svg>
 <svg id="mdi:undo">
 <svg xmlns="http://www.w3.org/2000/svg" id="mdi-undo" viewBox="0 0 24 24"><path d="M12.5,8C9.85,8 7.45,9 5.6,10.6L2,7V16H11L7.38,12.38C8.77,11.22 10.54,10.5 12.5,10.5C16.04,10.5 19.05,12.81 20.1,16L22.47,15.22C21.08,11.03 17.15,8 12.5,8Z" /></svg>
 </svg>
@@ -1147,10 +1144,8 @@ path.combo {
 <g transform="translate(600, 28)" class="key none keypos-9">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key none"/>
 </g>
-<g transform="translate(30, 84)" class="key keypos-10">
-<rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key"/>
-<use href="#mdi:text-box-outline" xlink:href="#mdi:text-box-outline" x="-7" y="-7" height="14" width="14.0" class="key tap glyph mdi:text-box-outline"/>
-<text x="0" y="-24" class="key shifted">lcgrind</text>
+<g transform="translate(30, 84)" class="key none keypos-10">
+<rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key none"/>
 </g>
 <g transform="translate(90, 84)" class="key none keypos-11">
 <rect rx="6" ry="6" x="-28" y="-26" width="56" height="52" class="key none"/>
