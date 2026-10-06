@@ -107,6 +107,7 @@ header "Building All the things!"
 build_init
 
 bash ./patch_art.sh
+python3 ./macro_text.py
 
 yaml2json "${this_dir}/build.yaml" \
     | jq -c '.include[]' \
