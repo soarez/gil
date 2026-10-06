@@ -1,0 +1,422 @@
+layout: {zmk_keyboard: gil}
+layers:
+  Base:
+  - Q
+  - W
+  - E
+  - R
+  - {t: T, h: '$$mdi:diamond-outline$$'}
+  - {t: Y, h: '$$mdi:diamond-outline$$'}
+  - U
+  - I
+  - O
+  - P
+  - {t: A, h: '$$mdi:apple-keyboard-control$$'}
+  - {t: S, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: D, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: F, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: G, h: '$$mdi:rocket$$'}
+  - {t: H, h: '$$mdi:rocket$$'}
+  - {t: J, h: '$$mdi:apple-keyboard-shift$$'}
+  - {t: K, h: '$$mdi:apple-keyboard-command$$'}
+  - {t: L, h: '$$mdi:apple-keyboard-option$$'}
+  - {t: ;, h: '$$mdi:apple-keyboard-control$$'}
+  - Z
+  - X
+  - C
+  - V
+  - B
+  - N
+  - M
+  - ','
+  - .
+  - /
+  - {t: '$$mdi:keyboard-esc$$', h: Navigation}
+  - {t: '$$mdi:keyboard-space$$', h: Symbols}
+  - {t: '$$mdi:keyboard-space$$', h: Brackets}
+  - {t: '$$mdi:microphone$$', h: Numbers, s: F20}
+  Symbols:
+  - '~'
+  - '!'
+  - '@'
+  - '#'
+  - $
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:backspace-reverse-outline$$
+  - $$mdi:keyboard-tab$$
+  - '%'
+  - ^
+  - '&'
+  - '*'
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-up-bold$$
+  - $$mdi:arrow-right-bold$$
+  - {t: ▽, type: trans}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - $$mdi:backspace-outline$$
+  - $$mdi:keyboard-return$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Media
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Brackets:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '"'
+  - (
+  - )
+  - {type: none}
+  - $$mdi:backspace-outline$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - ''''
+  - '{'
+  - '}'
+  - {type: none}
+  - \
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - _
+  - '['
+  - ']'
+  - {type: none}
+  - $$mdi:keyboard-return$$
+  - {type: none}
+  - {type: none}
+  - {type: held}
+  - System
+  Navigation:
+  - '`'
+  - {t: ▽, type: trans}
+  - $$mdi:arrow-up-bold$$
+  - {t: ▽, type: trans}
+  - {t: '$$mdi:microphone$$', s: F20}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:alpha-w-box$$
+  - $$mdi:arrow-left-bold$$
+  - $$mdi:arrow-down-bold$$
+  - $$mdi:arrow-right-bold$$
+  - $$mdi:backspace-outline$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - $$mdi:undo$$
+  - $$mdi:content-cut$$
+  - $$mdi:content-copy$$
+  - $$mdi:content-paste$$
+  - $$mdi:keyboard-return$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - Keypad
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Numbers:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - +
+  - '1'
+  - '2'
+  - '3'
+  - $$mdi:backspace-reverse-outline$$
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '='
+  - '4'
+  - '5'
+  - '6'
+  - '|'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '-'
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - Macros
+  - {type: held}
+  Keypad:
+  - +
+  - '1'
+  - '2'
+  - '3'
+  - '*'
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
+  - '-'
+  - '4'
+  - '5'
+  - '6'
+  - /
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
+  - .
+  - '7'
+  - '8'
+  - '9'
+  - '0'
+  - F11
+  - F12
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: held}
+  - {type: held}
+  - {type: none}
+  - {type: none}
+  Macros:
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {t: '$$mdi:text-box-outline$$', s: lcgrind}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: held}
+  - {type: held}
+  Media:
+  - $$mdi:fast-forward$$
+  - {type: none}
+  - $$mdi:volume-off$$
+  - {type: none}
+  - $$mdi:sleep$$
+  - {type: none}
+  - {t: '$$mdi:arrow-down-thin$$', s: scroll}
+  - {t: '$$mdi:arrow-up-thin$$', s: mouse}
+  - {t: '$$mdi:arrow-up-thin$$', s: scroll}
+  - {t: '$$mdi:mouse$$', s: left}
+  - $$mdi:rewind$$
+  - {t: '$$mdi:brightness-7$$', s: bright +}
+  - $$mdi:volume-high$$
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {t: '$$mdi:arrow-left-thin$$', s: mouse}
+  - {t: '$$mdi:arrow-down-thin$$', s: mouse}
+  - {t: '$$mdi:arrow-right-thin$$', s: mouse}
+  - {t: '$$mdi:mouse$$', s: right}
+  - $$mdi:play-pause$$
+  - {t: '$$mdi:brightness-5$$', s: bright −}
+  - $$mdi:volume-low$$
+  - {t: '$$mdi:restart$$', s: reset}
+  - {t: '$$mdi:chip$$', s: boot}
+  - {t: '$$mdi:chip$$', s: boot}
+  - Mouse slow
+  - Mouse mid
+  - Mouse fast
+  - {type: none}
+  - {type: held}
+  - {type: held}
+  - {type: none}
+  - {type: none}
+  System:
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {t: '$$mdi:bluetooth$$', s: '0'}
+  - {t: '$$mdi:bluetooth$$', s: '1'}
+  - {t: '$$mdi:bluetooth$$', s: '2'}
+  - {t: '$$mdi:bluetooth$$', s: '3'}
+  - {t: '$$mdi:bluetooth$$', s: '4'}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {t: '$$mdi:power-plug$$', s: ext}
+  - {t: '$$mdi:link-off$$', s: '0'}
+  - {t: '$$mdi:link-off$$', s: '1'}
+  - {t: '$$mdi:link-off$$', s: '2'}
+  - {t: '$$mdi:link-off$$', s: '3'}
+  - {t: '$$mdi:link-off$$', s: '4'}
+  - {type: none}
+  - {type: none}
+  - {type: none}
+  - {t: '$$mdi:restart$$', s: reset}
+  - {t: '$$mdi:chip$$', s: boot}
+  - {t: '$$mdi:chip$$', s: boot}
+  - {t: '$$mdi:restart$$', s: reset}
+  - {t: '$$mdi:power$$', s: hold 5s}
+  - {t: '$$mdi:swap-horizontal$$', s: USB/BT}
+  - {t: '$$mdi:bluetooth-off$$', s: clear}
+  - {type: none}
+  - {type: none}
+  - {type: held}
+  - {type: held}
+  Mouse slow:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Mouse mid:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  Mouse fast:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {type: held}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}

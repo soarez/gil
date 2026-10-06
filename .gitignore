@@ -9,3 +9,4 @@ firmware/
 art/preview/
 macros/
 config/macro_text.h
+.DS_Store

@@ -1,0 +1,217 @@
+parse_config:
+  sticky_label: $$mdi:gesture-tap-hold$$
+
+  raw_binding_map:
+    "&none":
+      tap: ""
+      type: none
+
+    # Ctrl+Alt+Cmd on T and Y
+    "&hy LC(LA(LGUI)) T":
+      tap: T
+      hold: $$mdi:diamond-outline$$
+    "&hy RC(RA(RGUI)) Y":
+      tap: Y
+      hold: $$mdi:diamond-outline$$
+
+    # Hyper (Shift+Ctrl+Alt+Cmd) on G and H
+    "&hy LS(LC(LA(LGUI))) G":
+      tap: G
+      hold: $$mdi:rocket$$
+    "&hy LS(LC(LA(LGUI))) H":
+      tap: H
+      hold: $$mdi:rocket$$
+
+    # Left hand homerow mods
+    "&hm LCTRL A":
+      tap: A
+      hold: $$mdi:apple-keyboard-control$$
+    "&hma LALT S":
+      tap: S
+      hold: $$mdi:apple-keyboard-option$$
+    "&hm LGUI D":
+      tap: D
+      hold: $$mdi:apple-keyboard-command$$
+    "&hm LSHFT F":
+      tap: F
+      hold: $$mdi:apple-keyboard-shift$$
+
+    # Right hand homerow mods
+    "&hm RSHFT J":
+      tap: J
+      hold: $$mdi:apple-keyboard-shift$$
+    "&hm RGUI K":
+      tap: K
+      hold: $$mdi:apple-keyboard-command$$
+    "&hma RALT L":
+      tap: L
+      hold: $$mdi:apple-keyboard-option$$
+    "&hm RCTRL SEMICOLON":
+      tap: ";"
+      hold: $$mdi:apple-keyboard-control$$
+
+    # Dictation (Wispr Flow, superwhisper): hold for Numbers, tap then hold for
+    # F20, double tap for one F20, triple tap for two
+    "&l4f20":
+      tap: $$mdi:microphone$$
+      shifted: F20
+      hold: Numbers
+    "&kp F20":
+      tap: $$mdi:microphone$$
+      shifted: F20
+
+    # Text macros, typed from text set at build time
+    "&lcgrind":
+      tap: $$mdi:text-box-outline$$
+      shifted: lcgrind
+
+    # Mouse
+    "&mmv MOVE_UP": {tap: $$mdi:arrow-up-thin$$, shifted: mouse}
+    "&mmv MOVE_DOWN": {tap: $$mdi:arrow-down-thin$$, shifted: mouse}
+    "&mmv MOVE_LEFT": {tap: $$mdi:arrow-left-thin$$, shifted: mouse}
+    "&mmv MOVE_RIGHT": {tap: $$mdi:arrow-right-thin$$, shifted: mouse}
+    "&msc SCRL_UP": {tap: $$mdi:arrow-up-thin$$, shifted: scroll}
+    "&msc SCRL_DOWN": {tap: $$mdi:arrow-down-thin$$, shifted: scroll}
+    "&mkp LCLK": {tap: $$mdi:mouse$$, shifted: left}
+    "&mkp RCLK": {tap: $$mdi:mouse$$, shifted: right}
+
+    # Bluetooth, output and power
+    "&bt BT_SEL 0": {tap: $$mdi:bluetooth$$, shifted: "0"}
+    "&bt BT_SEL 1": {tap: $$mdi:bluetooth$$, shifted: "1"}
+    "&bt BT_SEL 2": {tap: $$mdi:bluetooth$$, shifted: "2"}
+    "&bt BT_SEL 3": {tap: $$mdi:bluetooth$$, shifted: "3"}
+    "&bt BT_SEL 4": {tap: $$mdi:bluetooth$$, shifted: "4"}
+    "&bt BT_DISC 0": {tap: $$mdi:link-off$$, shifted: "0"}
+    "&bt BT_DISC 1": {tap: $$mdi:link-off$$, shifted: "1"}
+    "&bt BT_DISC 2": {tap: $$mdi:link-off$$, shifted: "2"}
+    "&bt BT_DISC 3": {tap: $$mdi:link-off$$, shifted: "3"}
+    "&bt BT_DISC 4": {tap: $$mdi:link-off$$, shifted: "4"}
+    "&bt BT_CLR": {tap: $$mdi:bluetooth-off$$, shifted: clear}
+    "&out OUT_TOG": {tap: $$mdi:swap-horizontal$$, shifted: USB/BT}
+    "&ext_power EP_TOG": {tap: $$mdi:power-plug$$, shifted: ext}
+    "&soft_off": {tap: $$mdi:power$$, shifted: hold 5s}
+    "&sys_reset": {tap: $$mdi:restart$$, shifted: reset}
+    "&bootloader": {tap: $$mdi:chip$$, shifted: boot}
+
+    "&caps_word": $$mdi:alpha-w-box$$
+
+    # Macros - Cmd+key
+    "&kp LG(Z)": $$mdi:undo$$
+    "&kp LG(X)": $$mdi:content-cut$$
+    "&kp LG(C)": $$mdi:content-copy$$
+    "&kp LG(V)": $$mdi:content-paste$$
+
+  zmk_keycode_map:
+    # Symbols
+    GRAVE: "`"
+    TILDE: "~"
+    EXCL: "!"
+    AT: "@"
+    HASH: "#"
+    DLLR: $
+    PRCNT: "%"
+    CARET: ^
+    AMPS: "&"
+    ASTRK: "*"
+    STAR: "*"
+    LPAR: (
+    RPAR: )
+    MINUS: "-"
+    UNDER: _
+    EQUAL: "="
+    PLUS: "+"
+    LBKT: "["
+    LBRC: "{"
+    RBKT: "]"
+    RBRC: "}"
+    BSLH: '\'
+    PIPE: "|"
+    SEMI: ";"
+    SEMICOLON: ";"
+    COLON: ":"
+    SQT: "'"
+    DQT: '"'
+    COMMA: ","
+    DOT: "."
+    FSLH: "/"
+    SLASH: "/"
+
+    # Navigation
+    UP: $$mdi:arrow-up-bold$$
+    DOWN: $$mdi:arrow-down-bold$$
+    LEFT: $$mdi:arrow-left-bold$$
+    RIGHT: $$mdi:arrow-right-bold$$
+    PG_UP: $$mdi:transfer-up$$
+    PG_DN: $$mdi:transfer-down$$
+    HOME: $$mdi:transfer-left$$
+    END: $$mdi:transfer-right$$
+
+    # Whitespace
+    RET: $$mdi:keyboard-return$$
+    ENTER: $$mdi:keyboard-return$$
+    ESC: $$mdi:keyboard-esc$$
+    TAB: $$mdi:keyboard-tab$$
+    SPACE: $$mdi:keyboard-space$$
+    BSPC: $$mdi:backspace-outline$$
+    DEL: $$mdi:backspace-reverse-outline$$
+
+    # Modifiers
+    LCTRL: $$mdi:apple-keyboard-control$$
+    LALT: $$mdi:apple-keyboard-option$$
+    LSHFT: $$mdi:apple-keyboard-shift$$
+    LGUI: $$mdi:apple-keyboard-command$$
+    LCMD: $$mdi:apple-keyboard-command$$
+    RCTRL: $$mdi:apple-keyboard-control$$
+    RALT: $$mdi:apple-keyboard-option$$
+    RSHFT: $$mdi:apple-keyboard-shift$$
+    RGUI: $$mdi:apple-keyboard-command$$
+    RCMD: $$mdi:apple-keyboard-command$$
+
+    # Media
+    C_PP: $$mdi:play-pause$$
+    C_NEXT: $$mdi:skip-next$$
+    C_PREV: $$mdi:skip-previous$$
+    C_FF: $$mdi:fast-forward$$
+    C_RW: $$mdi:rewind$$
+    # macOS reads Pause and Scroll Lock as display brightness
+    PAUSE_BREAK:
+      tap: $$mdi:brightness-7$$
+      shifted: bright +
+    SLCK:
+      tap: $$mdi:brightness-5$$
+      shifted: bright −
+    SYS_SLEEP: $$mdi:sleep$$
+    C_BRI_UP:
+      tap: $$mdi:lightbulb-on-outline$$
+      hold: $$mdi:plus$$
+    C_BRI_DN:
+      tap: $$mdi:lightbulb-on-outline$$
+      hold: $$mdi:minus$$
+
+    # Volume
+    K_MUTE: $$mdi:volume-off$$
+    C_MUTE: $$mdi:volume-off$$
+    K_VOL_UP: $$mdi:volume-high$$
+    C_VOL_UP: $$mdi:volume-high$$
+    K_VOL_DN: $$mdi:volume-low$$
+    C_VOL_DN: $$mdi:volume-low$$
+
+    # Keypad
+    KP_PLUS: "+"
+    KP_MINUS: "-"
+    KP_ASTERISK: "*"
+    KP_SLASH: "/"
+    KP_DOT: "."
+    KP_N0: "0"
+    KP_N1: "1"
+    KP_N2: "2"
+    KP_N3: "3"
+    KP_N4: "4"
+    KP_N5: "5"
+    KP_N6: "6"
+    KP_N7: "7"
+    KP_N8: "8"
+    KP_N9: "9"
+
+draw_config:
+  append_colon_to_layer_header: false
