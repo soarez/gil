@@ -38,6 +38,14 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
+        // Right outer thumb: hold for layer 4, or tap then press-and-hold to hold F20
+        // (push-to-talk in Wispr Flow and superwhisper)
+        l4f20: layer4_or_f20 {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&mo 4>, <&kp F20>;
+        };
     };
 
     keymap {
@@ -48,7 +56,7 @@
 &kp Q       &kp W      &kp E      &kp R       &hy LC(LA(LGUI)) T       &hy LC(LA(LGUI)) Y     &kp U        &kp I       &kp O      &kp P
 &hm LCTRL A &hm LALT S &hm LGUI D &hm LSHFT F &hy LS(LC(LA(LGUI))) G   &hy LS(LC(LA(LGUI))) H &hm RSHFT J  &hm RGUI K  &hm RALT L &hm RCTRL SEMICOLON
 &kp Z       &kp X      &kp C      &kp V       &kp B                    &kp N                  &kp M        &kp COMMA   &kp DOT    &kp SLASH
-                                  &lt 3 ESC   &lt 1 SPACE              &lt 2 SPACE            &mo 4
+                                  &lt 3 ESC   &lt 1 SPACE              &lt 2 SPACE            &l4f20
             >;
         };
         layer_1 {

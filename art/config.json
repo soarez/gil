@@ -35,7 +35,12 @@
       "file": "test_pattern_04.png",
       "color_convert": "h4x4a",
       "license": "mit"
+    },
+    {
+      "name": "apple_bones",
+      "file": "apple_bones.png",
+      "color_convert": "monochrome"
     }
   ],
-  "display": ["test_pattern_03", "test_pattern_04c"]
+  "display": ["apple_bones"]
 }

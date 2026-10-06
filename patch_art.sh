@@ -85,7 +85,7 @@ gen_hex_c() {
     local -a margs
     magick_args margs "$1"
     # Skip 10 bytes (header), write as C code
-    magick "${margs[@]}" "${name}" "-rotate" "90" PBM:- \
+    magick "${margs[@]}" "-rotate" "90" PBM:- \
         | hexdump -s 10 -v -e '"        " 18/1 "0x%02x, " "\n"' \
         | sed -e 's/0x  /0xff/g'
 }
@@ -181,12 +181,12 @@ patch_zmk() {
     echo "ZMK nice_view widget patched with selected images: $images"
 }
 
-# Preview all images, which is useful when testing stuff
-jq -r '.images[].name' "${config_json}" \
-    | while read -r name ; do
-    gen_preview "$name"
-done
-exit 0
+# # Preview all images, which is useful when testing stuff
+# jq -r '.images[].name' "${config_json}" \
+#     | while read -r name ; do
+#     gen_preview "$name"
+# done
+# exit 0
 
 patch_zmk
 
